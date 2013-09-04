@@ -52,26 +52,28 @@
         template: _.template($('#miniuser-template').html()),
 
         initialize: function() {
-            this.listenTo(this.model, 'destroy', this.remove);
+	    this.listenTo(this.model, 'destroy', this.remove);
         },
 
         render: function() {
-            var m = this.model;
-            var img = $.gravatar(m.get("email"), {'size': 30});
-            this.$el.html(this.template({user: m.get("username"), url: img.attr("src")}));
-            this.$el.data('user', m.get('username'));
-            this.$el.addClass('member');
-            if (m.get("role") === "admin") {
+	    var m = this.model;
+	    var img = $.gravatar(m.get("email"), {'size': 30});
+	    this.$el.html(this.template({user: m.get("username"), 
+					 url: img.attr("src")}));
+	    this.$el.data('user', m.get('username'));
+	    this.$el.addClass('member');
+	    if (m.get("role") === "admin") {
                 this.$el.find(".remove").remove();
-            } else {
+	    } else {
                 this.$el.find(".remove-user").click(function() {
-                    BoardView.unshare(m.get("username"));
-                    return false;
+		    BoardView.unshare(m.get("username"));
+		    return false;
                 });
-            }
-            return this;
+	    }
+	    return this;
         },
     });
+
 
     BoardView.members = new BoardView.Members();
     BoardView.memberViews = new Array();
