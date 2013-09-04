@@ -65,7 +65,7 @@ def index():
 
 
 if __name__ == "__main__":
-    if argv[1] == "--i-want-to-put-my-host-on-danger" and argv[2] == "--allow-clients-to-execute-python-on-the-machine":
+    if len(argv) == 2 and argv[1] == "--i-want-to-put-my-host-on-danger" and argv[2] == "--allow-clients-to-execute-python-on-the-machine":
 
         err_msg = "number of parameters"
         
