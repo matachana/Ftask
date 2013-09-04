@@ -96,14 +96,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <div class="row">
             <div class="span12">
                 <p class="muted">
+	      {% trans %}
                 Powered by <a href="http://python.org">Python</a>,
                            <a href="http://flask.pocoo.org/">Flask</a>,
                            <a href="http://backbonejs.org/">Backbone</a>,
                            <a href="http://http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>
                 <br>Licenced under AGPLv3, get the <a href="https://github.com/wadobo/Ftask">code</a>
+	      {% endtrans %}
                 </p>
                 <a href="http://wadobo.com">
-                    <img id="danigm" alt="powered by wadobolabs" src="/static/img/wadobolabs.png">
+                    <img id="danigm" alt="{% trans %}powered by wadobolabs{% endtrans %}" src="/static/img/wadobolabs.png">
                 </a>
             </div>
         </div>
@@ -123,13 +125,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <li></li>
             </ul>
             <div class="loading-text">
-            Loading
+            {% trans %} Loading {% endtrans %}
             </div>
             </div>
         </div>
 
         <div id="mini-loading">
-            <i class="icon-refresh icon-white"></i> Loading
+            <i class="icon-refresh icon-white"></i>{% trans %}Loading{% endtrans %}
         </div>
 
         {% block scripts %}
