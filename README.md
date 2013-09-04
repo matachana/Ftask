@@ -24,8 +24,8 @@ can read below the current status on the most known browsers.
 - Internet Explorer
     - Not tested
 - Epiphany
-    - Works on Epiphany 3.2.1 \[U.A.: AppleWebKit/535.4+\] (Filter popover bad
-      rendered)
+    - Works on Epiphany 3.2.1 \[U.A.: AppleWebKit/535.4+\] (List's popover bad
+      rendered, comment's preview not working)
 - Safari
     - Not tested
 - iPhone/iPad
