@@ -2,4 +2,6 @@
 *.kdev4
 *.swp
 *~
+*.mo
+ftask/translations/
 env/
