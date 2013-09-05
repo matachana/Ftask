@@ -1,0 +1,21 @@
+#!/bin/sh
+
+case $1 in
+    "update")
+	echo "Updating .po files..."
+	pybabel update -i ./i18n/messages.pot -d ./i18n/translations
+	;;
+    "scan")
+	echo "Scanning the source files for new strings to be added to .pot file"
+	pybabel extract -F ./i18n/ftask.cfg -o ./i18n/messages.pot .
+	;;
+    "compile")
+	echo "Compiling translations"
+	pybabel compile -d ./i18n/translations
+	;;
+    *)
+	echo "Invalid argument"
+	echo ""
+	echo " ftask-i18n   [update|scan]"
+	;;
+esac
