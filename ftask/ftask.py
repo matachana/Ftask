@@ -18,7 +18,8 @@
 from __future__ import division, absolute_import
 
 from flask import Flask
-from flask import redirect, url_for
+from flask import redirect, url_for, request
+from flask.ext.babel import Babel
 from app.auth.views import auth, auth_before_request
 from app.auth.views import csrf_token
 from app.board.views import board
@@ -34,11 +35,21 @@ from sys import argv
 DEBUG = True
 DATABASE = 'ftask'
 SECRET_KEY = 'development key'
+LANGUAGES = {
+    'en': 'English',
+    'es': 'Espanol',
+    }
 
 # create our little application :)
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('FTASK_SETTINGS', silent=True)
+
+babel = Babel(app)
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(LANGUAGES.keys())
 
 
 @app.before_request
