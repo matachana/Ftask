@@ -10,34 +10,34 @@
 <div id="modal" class="modal hide fade">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>New Board</h3>
+        <h3>{% trans %}New Board{% endtrans %}</h3>
     </div>
     <div class="modal-body">
         <form method="POST" id="board-form" class="form-horizontal" data-url="{{ url_for('board.new_board') }}">
         <div class="control-group">
-            <label class="control-label" for="boardname">Board name</label>
+            <label class="control-label" for="boardname">{% trans %}Board name{% endtrans %}</label>
             <div class="controls">
-                <input type="text" id="boardname" name="name" placeholder="board name"/>
-                <button class="btn btn-info">Add</button>
+                <input type="text" id="boardname" name="name" placeholder="{% trans %}board name{% endtrans %}"/>
+                <button class="btn btn-info">{% trans %}Add{% endtrans %}</button>
             </div>
         </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal">Close</button>
+        <button class="btn" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
     </div>
 </div>
 
 <div class="board-title">
-<h3>My Boards</h3>
-<a href="#" data-toggle="modal" data-target="#modal">New board...</a>
+<h3>{% trans %}My Boards{% endtrans %}</h3>
+<a href="#" data-toggle="modal" data-target="#modal">{% trans %}New board...{% endtrans %}</a>
 </div>
 
 <ul id="board-list" class="unstyled bold-list">
 </ul>
 
 <div class="board-title">
-<h3>Shared with me</h3>
+<h3>{% trans %}Shared with me{% endtrans %}</h3>
 </div>
 
 <ul id="shared-list" class="unstyled bold-list">

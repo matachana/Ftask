@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-09-04 22:33+0200\n"
+"POT-Creation-Date: 2013-09-05 22:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,86 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+
+#: interface/board/templates/board/filter.html:18
+msgid "Filter by"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:20
+msgid "Due date"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:25
+msgid "Options"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:29
+msgid "Expand to all the board"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:31
+msgid "Return to board view"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:68
+msgid "Remove from board"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:88
+msgid "Overdue tasks"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:89
+msgid "To be closed today"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:90
+msgid "To be closed this week"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:91
+msgid "All tasks in list"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:93
+msgid "Show tasks between"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:95
+msgid "and"
+msgstr ""
+
+#: interface/board/templates/board/filter.html:100
+msgid "Deadlines quick report"
+msgstr ""
+
+#: interface/board/templates/board/list.html:13
+msgid "New Board"
+msgstr ""
+
+#: interface/board/templates/board/list.html:18
+msgid "Board name"
+msgstr ""
+
+#: interface/board/templates/board/list.html:21
+msgid "Add"
+msgstr ""
+
+#: interface/board/templates/board/list.html:27
+msgid "Close"
+msgstr ""
+
+#: interface/board/templates/board/list.html:32
+msgid "My Boards"
+msgstr ""
+
+#: interface/board/templates/board/list.html:33
+msgid "New board..."
+msgstr ""
+
+#: interface/board/templates/board/list.html:40
+msgid "Shared with me"
+msgstr ""
 
 #: templates/base.html:99
 msgid ""

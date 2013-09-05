@@ -15,20 +15,20 @@
 
 <div class="navbar">
   <div class="navbar-inner">
-    <a class="brand" href="#">Filter by</a>
+    <a class="brand" href="#">{% trans %}Filter by{% endtrans %}</a>
     <ul class="nav">
-      <li id="dateNav"><a href="#date">Due date</a></li>
+      <li id="dateNav"><a href="#date">{% trans %}Due date{% endtrans %}</a></li>
     </ul>
     <ul class="nav pull-right">
       <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      Options
+      {% trans %}Options{% endtrans %}
       <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
-      <li><a id="expandToAll">Expand to all the board</a></li>
+      <li><a id="expandToAll">{% trans %}Expand to all the board{% endtrans %}</a></li>
       <li class="divider"></li>
-      <li><a href="/board/{{ boardid }}">Return to board view</a></li>
+      <li><a href="/board/{{ boardid }}">{% trans %}Return to board view{% endtrans %}</a></li>
       </ul></li>
     </ul>
   </div>
@@ -65,7 +65,7 @@
             <ul class="dropdown-menu">
                 <li> <img src="<%=url%>"> <%-user%> </li>
                 <li class="remove">
-                    <a href="#" class="remove-user">Remove from board <i class="icon-remove"></i></a>
+                    <a href="#" class="remove-user">{% trans %}Remove from board{% endtrans %}<i class="icon-remove"></i></a>
                 </li>
             </ul>
         </li>
@@ -85,19 +85,19 @@
 	<input name="_max_date_js" id="max_date_js" type="hidden" value="<%- max_date %>"/>
 	<div class="row-fluid date-shortcuts">
 	  <div class="span6">
-	    <a id="overdueTasks" class="btn btn-danger">Overdue tasks</a>
-	    <a id="todayTasks" class="btn btn-warning">To be closed today</a>
-	    <a id="thisWeekTasks" class="btn btn-success">To be closed this week</a>
-	    <a id="allTasks" class="btn btn-info">All tasks in list</a>
+	    <a id="overdueTasks" class="btn btn-danger">{% trans %}Overdue tasks{% endtrans %}</a>
+	    <a id="todayTasks" class="btn btn-warning">{% trans %}To be closed today{% endtrans %}</a>
+	    <a id="thisWeekTasks" class="btn btn-success">{% trans %}To be closed this week{% endtrans %}</a>
+	    <a id="allTasks" class="btn btn-info">{% trans %}All tasks in list{% endtrans %}</a>
 	    <div class="date-limits">
-	      Show tasks between
+	      {% trans %}Show tasks between{% endtrans %}
 	      <input id="min_date" type="date" class="dinp well well-small" value="<%- min_date %>"/>
-	      and
+	      {% trans %}and{% endtrans %}
 	      <input id="max_date" type="date" class="dinp well well-small" value="<%- max_date %>"/>
 	    </div>
 	  </div>
 	  <div class="span6">
-	      <h5 style="margin-top: -15px;">Deadlines quick report</h5>
+	      <h5 style="margin-top: -15px;">{% trans %}Deadlines quick report{% endtrans %}</h5>
               <div class="progress"></div>
 	      <div id="delayedQty" class="text-error"></div>
 	      <div id="todayQty" class="text-warning"></div>
