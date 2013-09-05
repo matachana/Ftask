@@ -13,9 +13,13 @@ case $1 in
 	echo "Compiling translations"
 	pybabel compile -d ./i18n/translations
 	;;
+    "publish")
+	echo "Moving translations intro production folder..."
+	cp -r ./i18n/translations .
+	;;
     *)
 	echo "Invalid argument"
 	echo ""
-	echo " ftask-i18n   [update|scan]"
+	echo " ftask-i18n   [update|scan|compile|publish]"
 	;;
 esac
