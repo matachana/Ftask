@@ -19,21 +19,21 @@
         <div class="well">
             <form method="POST" class="form" id="login-form" data-url="{{ url_for('auth.login') }}" data-next="{{ next }}">
                 <div class="control-group">
-                    <label class="control-label" for="username">Username</label>
+                    <label class="control-label" for="username">{% trans %}Username{% endtrans %}</label>
                     <div class="controls">
-                        <input type="text" id="username" name="username" placeholder="username" autofocus/>
+                        <input type="text" id="username" name="username" placeholder="{% trans %}username{% endtrans %}" autofocus/>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="password">Password</label>
+                    <label class="control-label" for="password">{% trans %}Password{% endtrans %}</label>
                     <div class="controls">
-                        <input type="password" id="password" name="password" placeholder="password"/>
+                        <input type="password" id="password" name="password" placeholder="{% trans %}password{% endtrans %}"/>
                     </div>
                 </div>
-                <input class="btn btn-success btn-large" type="submit" id="login" value="Login"/>
+                <input class="btn btn-success btn-large" type="submit" id="login" value="{% trans %}Login{% endtrans %}"/>
             </form>
             <div class="register">
-                New here? <a href="{{ url_for('authi.register') }}">Create an Account.</a>
+                {% trans %}New here?{% endtrans %} <a href="{{ url_for('authi.register') }}">{% trans %}Create an Account.{% endtrans %}</a>
             </div>
         </div><!-- well -->
     </div><!-- span -->

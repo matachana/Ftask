@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{% trans %}Register{% endtrans %}{% endblock %}
 
 {% block header %}
 <div class="row">
 <div class="span4 offset4">
     <h2>
     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="ftask"/>
-    Register
+    {% trans %}Register{% endtrans %}
     </h2>
 </div>
 </div>
@@ -19,27 +19,27 @@
         <div class="well">
             <form method="POST" class="form" id="register-form" data-url="{{ url_for('auth.register') }}" data-next="{{ url_for('authi.login') }}">
                 <div class="control-group">
-                    <label class="control-label" for="username">Username</label>
+                    <label class="control-label" for="username">{% trans %}Username{% endtrans %}</label>
                     <div class="controls">
-                        <input type="text" id="username" name="username" placeholder="username" autofocus/>
+                        <input type="text" id="username" name="username" placeholder="{% trans %}username{% endtrans %}" autofocus/>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="password">Password</label>
+                    <label class="control-label" for="password">{% trans %}Password{% endtrans %}</label>
                     <div class="controls">
-                        <input type="password" id="password" name="password" placeholder="password"/>
+                        <input type="password" id="password" name="password" placeholder="{% trans %}password{% endtrans %}"/>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="email">Email</label>
+                    <label class="control-label" for="email">{% trans %}Email{% endtrans %}</label>
                     <div class="controls">
                         <input type="email" id="email" name="email" placeholder="email@example.com"/>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-success btn-large" value="Create New Account"/>
+                <input type="submit" class="btn btn-success btn-large" value="{% trans %}Create New Account{% endtrans %}"/>
             </form>
             <div>
-                Already have an account? <a href="{{ url_for('authi.login') }}">Log In.</a>
+                {% trans %}Already have an account?{% endtrans %} <a href="{{ url_for('authi.login') }}">{% trans %}Log In.{% endtrans %}</a>
             </div>
         </div><!-- well -->
     </div><!-- span -->
@@ -51,7 +51,7 @@
     <script type="text/javascript">
         Ftask.form("#register-form",
                    function(data) {
-                        alert("ERROR");
+                        alert("{% trans %}Error while sending data to the server{% endtrans %}");
                    });
     </script>
 {% endblock %}

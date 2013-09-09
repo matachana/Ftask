@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Board View{% endblock %}
+{% block title %}{% trans %}Board View{% endtrans %}{% endblock %}
 
 {% block containerclass %}container-fluid short-padding{% endblock %}
 
@@ -13,9 +13,9 @@
 {% block content %}
 {{ csrf_token()|safe }}
 
-<div id="dialog-confirm" title="Delete the list?">
-  <h1>Are you sure you want to delete the list?</h1>
-  <p class="text-warning">The tasks included in this list will be also permanently deleted and cannot be recovered later.</p>
+<div id="dialog-confirm" title="{% trans %}Delete the list?{% endtrans %}">
+  <h1>{% trans %}Are you sure you want to delete the list?{% endtrans %}</h1>
+  <p class="text-warning">{% trans %}The tasks included in this list will be also permanently deleted and cannot be recovered later.{% endtrans %}</p>
 </div>
 
 
@@ -23,7 +23,7 @@
 <div id="member-modal" class="modal hide fade">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Members</h3>
+        <h3>{% trans %}Members{% endtrans %}</h3>
     </div>
     <div class="modal-body">
         <div class="user">
@@ -32,7 +32,7 @@
         </div>
         <form method="POST" id="share-form" class="form-horizontal" data-url="{{ url_for('board.share_board', boardid=boardid) }}">
             <input type="text" id="sharedname" name="user" placeholder="user name"/>
-            <button class="btn btn-info">Add</button>
+            <button class="btn btn-info">{% trans %}Add{% endtrans %}</button>
         </form>
     </div>
 </div>
@@ -46,16 +46,16 @@
     <div class="modal-body">
         <form method="PUT" id="board-form" class="form-horizontal" data-url="{{ url_for('board.view_board', boardid=boardid) }}">
         <div class="control-group">
-            <label class="control-label" for="boardname">Board name</label>
+            <label class="control-label" for="boardname">{% trans %}Board name{% endtrans %}</label>
             <div class="controls">
                 <input type="text" id="boardname" name="name" placeholder="board name"/>
-                <button class="btn btn-info">Update</button>
+                <button class="btn btn-info">{% trans %}Update{% endtrans %}</button>
             </div>
         </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal">Close</button>
+        <button class="btn" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
     </div>
 </div>
 
@@ -63,21 +63,21 @@
 <div id="modal" class="modal hide fade">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>New List</h3>
+        <h3>{% trans %}New List{% endtrans %}</h3>
     </div>
     <div class="modal-body">
         <form method="POST" id="list-form" class="form-horizontal" data-url="{{ url_for('board.new_list', boardid=boardid) }}">
         <div class="control-group">
-            <label class="control-label" for="listname">List name</label>
+            <label class="control-label" for="listname">{% trans %}List name{% endtrans %}</label>
             <div class="controls">
                 <input type="text" id="listname" name="name" placeholder="list name"/>
-                <button class="btn btn-info">Add</button>
+                <button class="btn btn-info">{% trans %}Add{% endtrans %}</button>
             </div>
         </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal">Close</button>
+        <button class="btn" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
     </div>
 </div>
 
@@ -85,7 +85,7 @@
 <div id="task-modal" class="modal hide fade">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Edit task</h3>
+        <h3>{% trans %}Edit task{% endtrans %}</h3>
     </div>
     <div class="modal-body">
         <div class="row-fluid">
@@ -93,7 +93,7 @@
                 <h4 class="header">
 	           <span class="taskname"></span>
 	           <span class="taskduedate" style="display: block"></span>
-	           <span class="muted">in list <span class="listname text-info"></span></span></h4>
+	           <span class="muted">{% trans %}in list{% endtrans %} <span class="listname text-info"></span></span></h4>
                 <form method="PUT" class="name-form" class="form" data-url="">
                     <div class="description">
                         <textarea name="description"></textarea> <br/>
@@ -103,28 +103,28 @@
                     <a href="#" class="close">&times;</a>
                 </form>
 		<form method="PUT" class="comment-form" data-url="">
-		    <textarea style="width: 95%; height: 100%;" name="comment" placeholder="Type your comment here... <Ctrl>+<Enter> to send, <Ctrl>+<P> to preview"></textarea>
+		    <textarea style="width: 95%; height: 100%;" name="comment" placeholder="{% trans %}Type your comment here... <Ctrl>+<Enter> to send, <Ctrl>+<P> to preview{% endtrans %}"></textarea>
 		    <div id="ta_preview" data-title="Click to hide">
-		      <div class="alert alert-info">Click to hide the preview</div>
+		      <div class="alert alert-info">{% trans %}Click to hide the preview{% endtrans %}</div>
 		      <div id="tap_content"></div>
 		    </div>
                 </form>
             </div>
             <div class="span3 menu">
-                <h4>Actions</h4>
-                <a href="#" class="btn remove-action"><i class="icon-trash"></i> Remove</a>
-                <h4>Members</h4>
+                <h4>{% trans %}Actions{% endtrans %}</h4>
+                <a href="#" class="btn remove-action"><i class="icon-trash"></i> {% trans %}Remove{% endtrans %}</a>
+                <h4>{% trans %}Members{% endtrans %}</h4>
                 <div class="action-member-lists">
                     <ul class="inline taskmembers"> </ul>
                 </div>
                 <div class="btn-group memberimg">
-                    <a href="#" class="dropdown-toggle btn assign-action" data-toggle="dropdown"><i class="icon-user"></i> Assign</a>
+                    <a href="#" class="dropdown-toggle btn assign-action" data-toggle="dropdown"><i class="icon-user"></i> {% trans %}Assign{% endtrans %}</a>
                     <ul class="dropdown-menu allmembers">
                     </ul>
                 </div>
             </div>
 	    <div class="span12">
-	      <h3>Comments</h3>
+	      <h3>{% trans %}Comments{% endtrans %}</h3>
 	      <div id="comments_board"></div>
 	    </div>
         </div>
@@ -157,20 +157,20 @@
     <!-- right menu -->
     <div class="span2 right-menu">
         <div class="top-menu">
-            <h4>Members</h4>
+            <h4>{% trans %}Members{% endtrans %}</h4>
                 <div class="member-lists">
                     <ul class="inline admin"> </ul>
                     <ul class="inline members"> </ul>
                 </div>
                 <div class="board-buttons">
-                <button class="btn" data-toggle="modal" data-target="#member-modal"><i class="icon-user"></i> Add Members</button>
+                <button class="btn" data-toggle="modal" data-target="#member-modal"><i class="icon-user"></i> {% trans %}Add Members{% endtrans %}</button>
                 </div>
-            <h4>Board</h4>
+            <h4>{% trans %}Board{% endtrans %}</h4>
                 <div class="board-buttons">
-                <button class="btn" data-toggle="modal" data-target="#modal"><i class="icon-list"></i> Add List</button>
-                <button class="btn"><i class="icon-wrench"></i> Options</button>
+                <button class="btn" data-toggle="modal" data-target="#modal"><i class="icon-list"></i> {% trans %}Add List{% endtrans %}</button>
+                <button class="btn"><i class="icon-wrench"></i> {% trans %}Options{% endtrans %}</button>
                 </div>
-                <h4>Activity</h4>
+                <h4>{% trans %}Activity{% endtrans %}</h4>
         </div>
         <div class="activity">
             <!-- TODO: show activity here -->
@@ -179,7 +179,7 @@
             <a href="http://wadobo.com">
                 <img id="danigm" alt="powered by wadobolabs" src="/static/img/wadobolabs.png">
             </a>
-            <a href="https://github.com/wadobo/Ftask">code</a>
+            <a href="https://github.com/wadobo/Ftask">{% trans %}code{% endtrans %}</a>
         </footer>
     </div>
 
@@ -187,9 +187,9 @@
 
 <!-- task dropdown menu -->
 <ul id="task-dropdown" class="dropdown-menu">
-    <li><a href="#" class="task-remove"><i class="icon-remove"></i> Remove</a></li>
+    <li><a href="#" class="task-remove"><i class="icon-remove"></i> {% trans %}Remove{% endtrans %}</a></li>
     <li>
-    <a href="#" class="task-assign dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Assign</a>
+    <a href="#" class="task-assign dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {% trans %}Assign{% endtrans %}</a>
     <ul class="dropdown-menu allmembers">
     </ul>
     </li>
@@ -207,7 +207,7 @@
             <ul class="dropdown-menu">
                 <li> <img src="<%=url%>"> <%-user%> </li>
                 <li class="remove">
-                    <a href="#" class="remove-user">Remove from task <i class="icon-remove"></i></a>
+                    <a href="#" class="remove-user">{% trans %}Remove from task{% endtrans %} <i class="icon-remove"></i></a>
                 </li>
             </ul>
         </li>
@@ -221,7 +221,7 @@
             <ul class="dropdown-menu">
                 <li> <img src="<%=url%>"> <%-user%> </li>
                 <li class="remove">
-                    <a href="#" class="remove-user">Remove from board <i class="icon-remove"></i></a>
+                    <a href="#" class="remove-user">{% trans %}Remove from board{% endtrans %} <i class="icon-remove"></i></a>
                 </li>
             </ul>
         </li>
@@ -229,8 +229,8 @@
 
     <script type="text/template" id="popover-template">
 	<div class="pop-container">
-		<button id="editlistname" type="button" class="btn fr">Edit list name</button>
-		<button id="filtertasks" type="button" class="btn fr">Filter tasks</button>
+		<button id="editlistname" type="button" class="btn fr">{% trans %}Edit list name{% endtrans %}</button>
+		<button id="filtertasks" type="button" class="btn fr">{% trans %}Filter tasks{% endtrans %}</button>
 	</div>
     </script>
 
@@ -243,7 +243,7 @@
             <div class="cards"></div>
             <div class="newcardform"></div>
         </div>
-        <div class="newcard muted">Add a card...</div>
+        <div class="newcard muted">{% trans %}Add a card...{% endtrans %}</div>
     </script>
 
     <script type="text/template" id="task-template">
@@ -264,7 +264,7 @@
             <textarea name="description"></textarea> <br/>
 	    <input type="date" name="due_date"/>
             </div>
-            <input class="btn btn-info" type="submit" value="Add"/>
+            <input class="btn btn-info" type="submit" value="{% trans %}Add{% endtrans %}"/>
             <a href="#" class="close">&times;</a>
         </form>
     </script>
@@ -284,7 +284,7 @@
     <script type="text/template" id="edit-listname-template">
         <form method="PUT" data-url="/api/boards/{{ boardid }}/lists/<%= id %>/" class="form-horizontal">
             <input type="text" name="name" value="<%- name %>" class="input-small"/>
-            <input class="btn btn-info" type="submit" value="Save"/>
+            <input class="btn btn-info" type="submit" value="{% trans %}Save{% endtrans %}"/>
             <a href="#" class="close">&times;</a>
         </form>
     </script>

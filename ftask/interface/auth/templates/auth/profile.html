@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Profile{% endblock %}
+{% block title %}{% trans %}Profile{% endtrans %}{% endblock %}
 
 {% block prehead %}
 {% include "navbar.html" %}
 {% endblock %}
 
 {% block header %}
-    <h1>{{ user['username'] }} Profile</h1>
+    <h1>{{ _('%(nickname)s profile', nickname=user['username']) }}</h1>
 {% endblock %}
 
 
@@ -24,9 +24,9 @@
             <div id="gravatar"> </div>
             <ul class="nav nav-list">
                 <li class="nav-header">@{{ g.user['username'] }}</li>
-                <li id="profile" {% if selected == "profile" %}class="active"{% endif %}><a href="{{ url_for('authi.profile') }}">Profile</a></li>
-                <li {% if selected == "board" %}class="active"{% endif %}><a href="{{ url_for('boardi.list_board') }}">Boards</a></li>
-		<li id="assigned_tasks"><a href="#assigned">Assigned tasks</a></li>
+                <li id="profile" {% if selected == "profile" %}class="active"{% endif %}><a href="{{ url_for('authi.profile') }}">{% trans %}Profile{% endtrans %}</a></li>
+                <li {% if selected == "board" %}class="active"{% endif %}><a href="{{ url_for('boardi.list_board') }}">{% trans %}Boards{% endtrans %}</a></li>
+		<li id="assigned_tasks"><a href="#assigned">{% trans %}Assigned tasks{% endtrans %}</a></li>
             </ul>
         </div>
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-09-05 22:15+0200\n"
-"PO-Revision-Date: 2013-09-05 22:25+0200\n"
+"POT-Creation-Date: 2013-09-09 12:27+0200\n"
+"PO-Revision-Date: 2013-09-09 12:39+0200\n"
 "Last-Translator: Mateo Matachana López <matachana.mateo@gmail.com>\n"
 "Language-Team: es <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -16,6 +16,86 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
+
+#: interface/auth/templates/auth/login.html:22
+#: interface/auth/templates/auth/register.html:22
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: interface/auth/templates/auth/login.html:24
+#: interface/auth/templates/auth/register.html:24
+msgid "username"
+msgstr "Nombre de usuario"
+
+#: interface/auth/templates/auth/login.html:28
+#: interface/auth/templates/auth/register.html:28
+msgid "Password"
+msgstr "Contraseña"
+
+#: interface/auth/templates/auth/login.html:30
+#: interface/auth/templates/auth/register.html:30
+msgid "password"
+msgstr "contraseña"
+
+#: interface/auth/templates/auth/login.html:33
+msgid "Login"
+msgstr "Entrar"
+
+#: interface/auth/templates/auth/login.html:36
+msgid "New here?"
+msgstr "¿Nuevo aquí?"
+
+#: interface/auth/templates/auth/login.html:36
+msgid "Create an Account."
+msgstr "Crea una cuenta."
+
+#: interface/auth/templates/auth/profile.html:3
+#: interface/auth/templates/auth/profile.html:27 templates/navbar.html:5
+msgid "Profile"
+msgstr "Perfil"
+
+#: interface/auth/templates/auth/profile.html:10
+#, python-format
+msgid "%(nickname)s profile"
+msgstr "Perfil de %(nickname)s"
+
+#: interface/auth/templates/auth/profile.html:28 templates/navbar.html:6
+#: templates/navbar.html:14
+msgid "Boards"
+msgstr "Carpetas"
+
+#: interface/auth/templates/auth/profile.html:29
+msgid "Assigned tasks"
+msgstr "Tareas asignadas"
+
+#: interface/auth/templates/auth/register.html:3
+#: interface/auth/templates/auth/register.html:10
+msgid "Register"
+msgstr "Registrar nueva cuenta"
+
+#: interface/auth/templates/auth/register.html:34
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: interface/auth/templates/auth/register.html:39
+msgid "Create New Account"
+msgstr "Crear una nueva cuenta"
+
+#: interface/auth/templates/auth/register.html:42
+msgid "Already have an account?"
+msgstr "¿Ya tienes una cuenta?"
+
+#: interface/auth/templates/auth/register.html:42
+msgid "Log In."
+msgstr "Iniciar sesión"
+
+#: interface/auth/templates/auth/register.html:54 templates/navbar.html:34
+msgid "Error while sending data to the server"
+msgstr "Error mientras se enviaban los datos al servidor"
+
+#: interface/board/templates/board/filter.html:3
+msgid "Task filtering"
+msgstr "Filtrado de tareas"
 
 #: interface/board/templates/board/filter.html:18
 msgid "Filter by"
@@ -26,6 +106,7 @@ msgid "Due date"
 msgstr "Fecha límite"
 
 #: interface/board/templates/board/filter.html:25
+#: interface/board/templates/board/view.html:171
 msgid "Options"
 msgstr "Opciones"
 
@@ -38,6 +119,7 @@ msgid "Return to board view"
 msgstr "Volver a la vista de carpeta"
 
 #: interface/board/templates/board/filter.html:68
+#: interface/board/templates/board/view.html:224
 msgid "Remove from board"
 msgstr "Eliminar de la carpeta"
 
@@ -69,19 +151,33 @@ msgstr "y"
 msgid "Deadlines quick report"
 msgstr "Informe rápido de fechas límite"
 
+#: interface/board/templates/board/list.html:3
+msgid "Board list"
+msgstr "Carpetas"
+
 #: interface/board/templates/board/list.html:13
 msgid "New Board"
 msgstr "Nueva carpeta"
 
 #: interface/board/templates/board/list.html:18
+#: interface/board/templates/board/view.html:49
 msgid "Board name"
 msgstr "Nombre de carpeta"
 
+#: interface/board/templates/board/list.html:20
+msgid "board name"
+msgstr "Nombre de carpeta"
+
 #: interface/board/templates/board/list.html:21
+#: interface/board/templates/board/view.html:35
+#: interface/board/templates/board/view.html:74
+#: interface/board/templates/board/view.html:267
 msgid "Add"
 msgstr "Añadir"
 
 #: interface/board/templates/board/list.html:27
+#: interface/board/templates/board/view.html:58
+#: interface/board/templates/board/view.html:80
 msgid "Close"
 msgstr "Cerrar"
 
@@ -96,6 +192,116 @@ msgstr "Nueva carpeta..."
 #: interface/board/templates/board/list.html:40
 msgid "Shared with me"
 msgstr "Compartidos conmigo"
+
+#: interface/board/templates/board/view.html:3
+msgid "Board View"
+msgstr "Vista de carpeta"
+
+#: interface/board/templates/board/view.html:16
+msgid "Delete the list?"
+msgstr "¿Eliminar la lista?"
+
+#: interface/board/templates/board/view.html:17
+msgid "Are you sure you want to delete the list?"
+msgstr "¿Estás seguro de que deseas eliminar la lista?"
+
+#: interface/board/templates/board/view.html:18
+msgid ""
+"The tasks included in this list will be also permanently deleted and "
+"cannot be recovered later."
+msgstr "Las tareas contenidas en la lista también serán eliminadas y no se podrán recuperar más tarde"
+
+#: interface/board/templates/board/view.html:26
+#: interface/board/templates/board/view.html:116
+#: interface/board/templates/board/view.html:160
+msgid "Members"
+msgstr "Miembros"
+
+#: interface/board/templates/board/view.html:52
+msgid "Update"
+msgstr "Actualizar"
+
+#: interface/board/templates/board/view.html:66
+msgid "New List"
+msgstr "Nueva lista"
+
+#: interface/board/templates/board/view.html:71
+msgid "List name"
+msgstr "Nombre de la lista"
+
+#: interface/board/templates/board/view.html:88
+msgid "Edit task"
+msgstr "Editar tarea"
+
+#: interface/board/templates/board/view.html:96
+msgid "in list"
+msgstr "en la lista"
+
+#: interface/board/templates/board/view.html:106
+msgid "Type your comment here... <Ctrl>+<Enter> to send, <Ctrl>+<P> to preview"
+msgstr "Escribe aquí tu comentario. Pulsa <Ctrl>+<Enter> para enviarlo o <Ctrl>+<P> para previsualizarlo..."
+
+#: interface/board/templates/board/view.html:108
+msgid "Click to hide the preview"
+msgstr "Haz click para cerrar la vista previa"
+
+#: interface/board/templates/board/view.html:114
+msgid "Actions"
+msgstr "Opciones"
+
+#: interface/board/templates/board/view.html:115
+#: interface/board/templates/board/view.html:190
+msgid "Remove"
+msgstr "Eliminar"
+
+#: interface/board/templates/board/view.html:121
+#: interface/board/templates/board/view.html:192
+msgid "Assign"
+msgstr "Asignar"
+
+#: interface/board/templates/board/view.html:127
+msgid "Comments"
+msgstr "Comentarios"
+
+#: interface/board/templates/board/view.html:166
+msgid "Add Members"
+msgstr "Añadir miembros"
+
+#: interface/board/templates/board/view.html:168
+msgid "Board"
+msgstr "Carpetas"
+
+#: interface/board/templates/board/view.html:170
+msgid "Add List"
+msgstr "Añadir lista"
+
+#: interface/board/templates/board/view.html:173
+msgid "Activity"
+msgstr "Actividad"
+
+#: interface/board/templates/board/view.html:182
+msgid "code"
+msgstr "código"
+
+#: interface/board/templates/board/view.html:210
+msgid "Remove from task"
+msgstr "Eliminar de la tarea"
+
+#: interface/board/templates/board/view.html:232
+msgid "Edit list name"
+msgstr "Editar el nombre de la lista"
+
+#: interface/board/templates/board/view.html:233
+msgid "Filter tasks"
+msgstr "Filtrar tareas"
+
+#: interface/board/templates/board/view.html:246
+msgid "Add a card..."
+msgstr "Añadir tarea..."
+
+#: interface/board/templates/board/view.html:287
+msgid "Save"
+msgstr "Guardar"
 
 #: templates/base.html:99
 msgid ""
@@ -117,7 +323,7 @@ msgstr ""
 "<a href=\"http://backbonejs.org\">Backbone</a>,\n"
 "y <a href=\"http://twitter.github.io/bootstrap/\">Twitter Bootstrap</a>\n"
 "\n"
-"<b>Licenciado bajo los términos de la AGPLv3, obtén el <a "
+"<br>Licenciado bajo los términos de la AGPLv3, obtén el <a "
 "href=\"https://github.com/wadobo/Ftask\">código</a>\n"
 "\n"
 "\n"
@@ -133,4 +339,8 @@ msgstr "Cargando"
 #: templates/base.html:134
 msgid "Loading"
 msgstr "Cargando"
+
+#: templates/navbar.html:16
+msgid "Log Out"
+msgstr "Salir"
 
